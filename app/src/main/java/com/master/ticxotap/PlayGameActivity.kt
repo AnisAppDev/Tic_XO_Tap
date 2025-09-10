@@ -74,20 +74,20 @@ class PlayGameActivity : AppCompatActivity() {
 
                     //check 1 Row pair also check row not null
                     //if b1 means in row 1 button empty then condition false
-                    if(b1.equals(b2) && b2.equals(b3) && !b1.equals(""))
+                    if(b1.equals(b2) && b2.equals(b3) && b1.isNotEmpty())
                     {
 
                         Toast.makeText(this, "Row 1 Win", Toast.LENGTH_SHORT).show()
                     }
                     
                     // 2 Row
-                    else if (b4.equals(b5) && b5.equals(b6) && !b4.equals(""))
+                    else if (b4.equals(b5) && b5.equals(b6) && b4.isNotEmpty())
                     {
                         Toast.makeText(this, "Row 2 Win", Toast.LENGTH_SHORT).show()
                     }
 
                     // 3 Row
-                    else if (b7.equals(b8) && b8.equals(b9) && !b7.equals(""))
+                    else if (b7.equals(b8) && b8.equals(b9) && b7.isNotEmpty())
                     {
                         Toast.makeText(this, "Row 3 Win", Toast.LENGTH_SHORT).show()
                     }
