@@ -1,130 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PlayGameActivity"
     android:background="@color/white"
-    android:gravity="center">
+    tools:context=".PlayGameActivity">
 
-    <GridLayout
-        android:id="@+id/gameBoard"
+    <!-- Game Board + Win Lines inside one container -->
+    <FrameLayout
+        android:id="@+id/boardContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:rowCount="3"
-        android:columnCount="3"
-        android:background="@android:color/black">
+        android:layout_gravity="center">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/Btn1"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:freezesText="true"
-            android:layout_margin="2dp"
-            android:onClick="CkeckValue"
-            android:textColor="@color/black"
-            android:background="@android:color/white"
-            android:textSize="35sp"
-            android:textStyle="bold"/>
+        <!-- Game Board -->
+        <GridLayout
+            android:id="@+id/gameBoard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rowCount="3"
+            android:columnCount="3"
+            android:background="@android:color/black">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/Btn2"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:freezesText="true"
-            android:layout_margin="2dp"
-            android:onClick="CkeckValue"
-            android:textColor="@color/black"
-            android:background="@android:color/white"
-            android:textSize="35sp"
-            android:textStyle="bold"/>
+            <!-- 9 Buttons -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Btn1"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_margin="2dp"
+                android:onClick="CkeckValue"
+                android:textColor="@color/black"
+                android:background="@android:color/white"
+                android:textSize="35sp"
+                android:textStyle="bold"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/Btn3"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:freezesText="true"
-            android:layout_margin="2dp"
-            android:onClick="CkeckValue"
-            android:textColor="@color/black"
-            android:background="@android:color/white"
-            android:textSize="35sp"
-            android:textStyle="bold"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Btn2"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_margin="2dp"
+                android:onClick="CkeckValue"
+                android:textColor="@color/black"
+                android:background="@android:color/white"
+                android:textSize="35sp"
+                android:textStyle="bold"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/Btn4"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:freezesText="true"
-            android:layout_margin="2dp"
-            android:onClick="CkeckValue"
-            android:textColor="@color/black"
-            android:background="@android:color/white"
-            android:textSize="35sp"
-            android:textStyle="bold"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Btn3"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_margin="2dp"
+                android:onClick="CkeckValue"
+                android:textColor="@color/black"
+                android:background="@android:color/white"
+                android:textSize="35sp"
+                android:textStyle="bold"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/Btn5"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:freezesText="true"
-            android:layout_margin="2dp"
-            android:onClick="CkeckValue"
-            android:textColor="@color/black"
-            android:background="@android:color/white"
-            android:textSize="35sp"
-            android:textStyle="bold"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Btn4"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_margin="2dp"
+                android:onClick="CkeckValue"
+                android:textColor="@color/black"
+                android:background="@android:color/white"
+                android:textSize="35sp"
+                android:textStyle="bold"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/Btn6"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:freezesText="true"
-            android:layout_margin="2dp"
-            android:onClick="CkeckValue"
-            android:textColor="@color/black"
-            android:background="@android:color/white"
-            android:textSize="35sp"
-            android:textStyle="bold"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Btn5"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_margin="2dp"
+                android:onClick="CkeckValue"
+                android:textColor="@color/black"
+                android:background="@android:color/white"
+                android:textSize="35sp"
+                android:textStyle="bold"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/Btn7"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:freezesText="true"
-            android:layout_margin="2dp"
-            android:onClick="CkeckValue"
-            android:textColor="@color/black"
-            android:background="@android:color/white"
-            android:textSize="35sp"
-            android:textStyle="bold"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Btn6"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_margin="2dp"
+                android:onClick="CkeckValue"
+                android:textColor="@color/black"
+                android:background="@android:color/white"
+                android:textSize="35sp"
+                android:textStyle="bold"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/Btn8"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:freezesText="true"
-            android:layout_margin="2dp"
-            android:onClick="CkeckValue"
-            android:textColor="@color/black"
-            android:background="@android:color/white"
-            android:textSize="35sp"
-            android:textStyle="bold"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Btn7"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_margin="2dp"
+                android:onClick="CkeckValue"
+                android:textColor="@color/black"
+                android:background="@android:color/white"
+                android:textSize="35sp"
+                android:textStyle="bold"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/Btn9"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:freezesText="true"
-            android:layout_margin="2dp"
-            android:onClick="CkeckValue"
-            android:textColor="@color/black"
-            android:background="@android:color/white"
-            android:textSize="35sp"
-            android:textStyle="bold"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Btn8"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_margin="2dp"
+                android:onClick="CkeckValue"
+                android:textColor="@color/black"
+                android:background="@android:color/white"
+                android:textSize="35sp"
+                android:textStyle="bold"/>
 
-    </GridLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Btn9"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_margin="2dp"
+                android:onClick="CkeckValue"
+                android:textColor="@color/black"
+                android:background="@android:color/white"
+                android:textSize="35sp"
+                android:textStyle="bold"/>
+        </GridLayout>
 
-</LinearLayout>
+        <!-- Win Lines Overlay -->
+        <!-- Horizontal Lines -->
+        <View
+            android:id="@+id/winLineHorizontal1"
+            android:layout_width="200dp"
+            android:layout_height="5dp"
+            android:layout_gravity="center"
+            android:translationY="-80dp"
+            android:background="@android:color/holo_red_dark"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/winLineHorizontal2"
+            android:layout_width="200dp"
+            android:layout_height="5dp"
+            android:layout_gravity="center"
+            android:background="@android:color/holo_red_dark"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/winLineHorizontal3"
+            android:layout_width="200dp"
+            android:layout_height="5dp"
+            android:layout_gravity="center"
+            android:translationY="80dp"
+            android:background="@android:color/holo_red_dark"
+            android:visibility="gone" />
+
+        <!-- Vertical Lines -->
+        <View
+            android:id="@+id/winLineVertical1"
+            android:layout_width="5dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:translationX="-80dp"
+            android:background="@android:color/holo_red_dark"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/winLineVertical2"
+            android:layout_width="5dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:background="@android:color/holo_red_dark"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/winLineVertical3"
+            android:layout_width="5dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:translationX="80dp"
+            android:background="@android:color/holo_red_dark"
+            android:visibility="gone" />
+
+        <!-- Diagonals -->
+        <View
+            android:id="@+id/winLineDiagonal1"
+            android:layout_width="250dp"
+            android:layout_height="5dp"
+            android:layout_gravity="center"
+            android:rotation="45"
+            android:background="@android:color/holo_red_dark"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/winLineDiagonal2"
+            android:layout_width="250dp"
+            android:layout_height="5dp"
+            android:layout_gravity="center"
+            android:rotation="-45"
+            android:background="@android:color/holo_red_dark"
+            android:visibility="gone" />
+
+    </FrameLayout>
+</FrameLayout>
