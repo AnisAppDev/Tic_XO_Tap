@@ -29,6 +29,10 @@ class PlayGameActivity : AppCompatActivity() {
 //        }
 
 
+        binding.BtnClear.setOnClickListener {
+            clearAllButton()
+        }
+
     }
 
     fun CkeckValue(View:android.view.View)
@@ -181,4 +185,18 @@ class PlayGameActivity : AppCompatActivity() {
 
         }
     }
+
+    private fun PlayGameActivity.clearAllButton() {
+        binding.Btn1.text = ""
+        binding.Btn2.text = ""
+        binding.Btn3.text = ""
+        binding.Btn4.text = ""
+        binding.Btn5.text = ""
+        binding.Btn6.text = ""
+        binding.Btn7.text = ""
+        binding.Btn8.text = ""
+        binding.Btn9.text = ""
+
+    }
+
 }
