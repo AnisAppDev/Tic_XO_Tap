@@ -72,6 +72,7 @@ class PlayGameActivity : AppCompatActivity() {
                     Log.d("b8",b8)
                     Log.d("b9",b9)
 
+                    //Rows
                     //check 1 Row pair also check row not null
                     //if b1 means in row 1 button empty then condition false
                     if(b1.equals(b2) && b2.equals(b3) && !b1.equals(""))
@@ -79,19 +80,47 @@ class PlayGameActivity : AppCompatActivity() {
 
                         Toast.makeText(this, "Row 1 Win", Toast.LENGTH_SHORT).show()
                     }
-                    
                     // 2 Row
                     else if (b4.equals(b5) && b5.equals(b6) && !b4.equals(""))
                     {
                         Toast.makeText(this, "Row 2 Win", Toast.LENGTH_SHORT).show()
                     }
-
                     // 3 Row
                     else if (b7.equals(b8) && b8.equals(b9) && !b7.equals(""))
                     {
                         Toast.makeText(this, "Row 3 Win", Toast.LENGTH_SHORT).show()
                     }
-                    
+
+                    //Columns
+
+                    //1 Column
+                    else if(b1.equals(b4) && b4.equals(b7) && b4.isNotEmpty())
+                    {
+                        Toast.makeText(this, "Coumn 1 Win", Toast.LENGTH_SHORT).show()
+                    }
+                    //2 Column
+                    else if(b2.equals(b5) && b5.equals(b8) && b5.isNotEmpty())
+                    {
+                        Toast.makeText(this, "Coumn 2 Win", Toast.LENGTH_SHORT).show()
+                    }
+                    //3 Column
+                    else if(b3.equals(b6) && b6.equals(b9) && b6.isNotEmpty())
+                    {
+                        Toast.makeText(this, "Coumn 3 Win", Toast.LENGTH_SHORT).show()
+                    }
+
+                    //Diagonals
+
+                    //1 Diagonal left
+                    else if(b1.equals(b5) && b5.equals(b9) && b5.isNotEmpty())
+                    {
+                        Toast.makeText(this, "Diagonal 1 Win", Toast.LENGTH_SHORT).show()
+                    }
+                    //2 Diagonal right
+                    else if(b3.equals(b5) && b5.equals(b7) && b5.isNotEmpty())
+                    {
+                        Toast.makeText(this, "Diagonal 2 Win", Toast.LENGTH_SHORT).show()
+                    }
                 }
         }
 
