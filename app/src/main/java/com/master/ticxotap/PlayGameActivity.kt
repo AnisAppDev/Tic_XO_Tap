@@ -107,11 +107,15 @@ class PlayGameActivity : AppCompatActivity() {
                                 R.anim.line_horizontal
                             )
                         )
+                        // Disable clicks immediately
+                        setBoardEnabled(false)
+
 
                         // Delay 3 seconds, then clear the board
                         binding.root.postDelayed({
                             clearAllButton()
-                        }, 3000)
+                            setBoardEnabled(true) // Enable again
+                        }, 2000)
                     }
                     // 2 Row
                     else if (b4.equals(b5) && b5.equals(b6) && !b4.equals("")) {
@@ -131,7 +135,8 @@ class PlayGameActivity : AppCompatActivity() {
                         // Delay 3 seconds, then clear the board
                         binding.root.postDelayed({
                             clearAllButton()
-                        }, 3000)
+                            setBoardEnabled(true) // Enable again
+                        }, 2000)
                     }
                     // 3 Row
                     else if (b7.equals(b8) && b8.equals(b9) && !b7.equals("")) {
@@ -147,11 +152,14 @@ class PlayGameActivity : AppCompatActivity() {
                                 R.anim.line_horizontal
                             )
                         )
+                        // Disable clicks immediately
+                        setBoardEnabled(false)
 
                         // Delay 3 seconds, then clear the board
                         binding.root.postDelayed({
                             clearAllButton()
-                        }, 3000)
+                            setBoardEnabled(true) // Enable again
+                        }, 2000)
                     }
 
                     //Columns
@@ -170,11 +178,14 @@ class PlayGameActivity : AppCompatActivity() {
                                 R.anim.line_vertical
                             )
                         )
+                        // Disable clicks immediately
+                        setBoardEnabled(false)
 
                         // Delay 3 seconds, then clear the board
                         binding.root.postDelayed({
                             clearAllButton()
-                        }, 3000)
+                            setBoardEnabled(true) // Enable again
+                        }, 2000)
                     }
                     //2 Column
                     else if (b2.equals(b5) && b5.equals(b8) && b5.isNotEmpty()) {
@@ -190,11 +201,14 @@ class PlayGameActivity : AppCompatActivity() {
                                 R.anim.line_vertical
                             )
                         )
+                        // Disable clicks immediately
+                        setBoardEnabled(false)
 
                         // Delay 3 seconds, then clear the board
                         binding.root.postDelayed({
                             clearAllButton()
-                        }, 3000)
+                            setBoardEnabled(true) // Enable again
+                        }, 2000)
                     }
                     //3 Column
                     else if (b3.equals(b6) && b6.equals(b9) && b6.isNotEmpty()) {
@@ -210,11 +224,14 @@ class PlayGameActivity : AppCompatActivity() {
                                 R.anim.line_vertical
                             )
                         )
+                        // Disable clicks immediately
+                        setBoardEnabled(false)
 
                         // Delay 3 seconds, then clear the board
                         binding.root.postDelayed({
                             clearAllButton()
-                        }, 3000)
+                            setBoardEnabled(true) // Enable again
+                        }, 2000)
                     }
 
                     //Diagonals
@@ -233,11 +250,14 @@ class PlayGameActivity : AppCompatActivity() {
                                 R.anim.line_diagonal_left
                             )
                         )
+                        // Disable clicks immediately
+                        setBoardEnabled(false)
 
                         // Delay 3 seconds, then clear the board
                         binding.root.postDelayed({
                             clearAllButton()
-                        }, 3000)
+                            setBoardEnabled(true) // Enable again
+                        }, 2000)
                     }
                     //2 Diagonal right
                     else if (b3.equals(b5) && b5.equals(b7) && b5.isNotEmpty()) {
@@ -253,11 +273,14 @@ class PlayGameActivity : AppCompatActivity() {
                                 R.anim.line_diagonal_right
                             )
                         )
+                        // Disable clicks immediately
+                        setBoardEnabled(false)
 
                         // Delay 3 seconds, then clear the board
                         binding.root.postDelayed({
                             clearAllButton()
-                        }, 3000)
+                            setBoardEnabled(true) // Enable again
+                        }, 2000)
                     }
                 }
             }
@@ -308,6 +331,17 @@ class PlayGameActivity : AppCompatActivity() {
         // Hide visible win lines
         WinLine?.visibility = View.GONE
 
+    }
+    private fun setBoardEnabled(enabled: Boolean) {
+        val buttons = listOf(
+            binding.Btn1, binding.Btn2, binding.Btn3,
+            binding.Btn4, binding.Btn5, binding.Btn6,
+            binding.Btn7, binding.Btn8, binding.Btn9
+        )
+
+        for (btn in buttons) {
+            btn.isEnabled = enabled
+        }
     }
 
 }
