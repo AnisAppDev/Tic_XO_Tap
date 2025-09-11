@@ -34,8 +34,18 @@ class PlayGameActivity : AppCompatActivity() {
         // to clear and set color hint for user
         clearAllButton()
 
+        //clear button value
         binding.BtnClear.setOnClickListener {
             clearAllButton()
+        }
+
+        //clear score
+        binding.BtnClearScore.setOnClickListener {
+            ScoreO = 0
+            ScoreX = 0
+
+            binding.TxtXscore.text = ScoreX.toString()
+            binding.TxtOscore.text = ScoreO.toString()
         }
 
     }
